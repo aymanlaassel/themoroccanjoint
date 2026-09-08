@@ -1,51 +1,47 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HOURS_LABEL } from "@/lib/hours";
 import { INSTAGRAM_URL, SHOP_URL, WHATSAPP_DISPLAY, whatsappLink } from "@/lib/shopify";
-import Star from "./Star";
+import OpenStatus from "./OpenStatus";
 
 export default function Footer() {
   return (
-    <footer className="bg-smoke">
-      <div className="tricolor" aria-hidden="true" />
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div>
-            <p className="text-small font-display text-2xl tracking-[0.12em] uppercase">The Moroccan Joint</p>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-sand">
-              A halal Moroccan kitchen in Miami. Slow-cooked tajines, Friday couscous, msemen, paninis and mint tea,
-              made fresh to order for delivery and pickup.
+    <footer id="contact" className="bg-green-deep text-cream">
+      <div className="mx-auto max-w-7xl px-5 py-14 lg:px-10">
+        <div className="grid gap-10 md:grid-cols-[auto_1fr_1fr_1fr] md:gap-14">
+          <div className="max-w-xs">
+            <Image src="/img/logo.jpg" alt="The Moroccan Joint" width={96} height={96} className="h-24 w-24 object-cover" />
+            <p className="mt-5 text-sm leading-relaxed text-cream/85">
+              Moroccan food made in Miami with the warmth of home. A ghost kitchen serving authentic Moroccan street food made fresh to order, for delivery and pickup.
             </p>
           </div>
           <div>
-            <p className="label mb-4">Hours</p>
-            <p className="font-display text-2xl tnum">{HOURS_LABEL}</p>
-            <p className="mt-2 text-sm text-sand">Every day. Friday couscous delivers midday.</p>
+            <h4 className="font-display text-2xl uppercase tracking-wide text-gold">Hours</h4>
+            <p className="mt-3 text-sm">Open daily</p>
+            <p className="tnum text-lg">{HOURS_LABEL}</p>
+            <OpenStatus className="mt-2 text-sm text-gold" />
+            <p className="mt-3 text-sm text-cream/80">Friday couscous delivers midday. Pre-order by Thursday.</p>
           </div>
           <div>
-            <p className="label mb-4">Order</p>
-            <ul className="space-y-2 text-sm text-cream">
-              <li><a className="hover:text-gold transition-colors" href={whatsappLink()} target="_blank" rel="noopener">WhatsApp {WHATSAPP_DISPLAY}</a></li>
-              <li><a className="hover:text-gold transition-colors" href="tel:+13054132526">Call {WHATSAPP_DISPLAY}</a></li>
-              <li><Link className="hover:text-gold transition-colors" href="/menu">Menu</Link></li>
-              <li><Link className="hover:text-gold transition-colors" href="/catering">Catering</Link></li>
+            <h4 className="font-display text-2xl uppercase tracking-wide text-gold">Order</h4>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li><a className="hover:text-gold" href={whatsappLink()} target="_blank" rel="noopener">WhatsApp {WHATSAPP_DISPLAY}</a></li>
+              <li><a className="hover:text-gold" href="tel:+13054132526">Call {WHATSAPP_DISPLAY}</a></li>
+              <li><Link className="hover:text-gold" href="/menu">Order online</Link></li>
+              <li><Link className="hover:text-gold" href="/catering">Catering &amp; special orders</Link></li>
             </ul>
           </div>
           <div>
-            <p className="label mb-4">Follow</p>
-            <ul className="space-y-2 text-sm text-cream">
-              <li><a className="hover:text-gold transition-colors" href={INSTAGRAM_URL} target="_blank" rel="noopener">Instagram</a></li>
-              <li><a className="hover:text-gold transition-colors" href={SHOP_URL}>Online store</a></li>
+            <h4 className="font-display text-2xl uppercase tracking-wide text-gold">Follow</h4>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li><a className="hover:text-gold" href={INSTAGRAM_URL} target="_blank" rel="noopener">Instagram @themoroccanjointmiami</a></li>
+              <li><a className="hover:text-gold" href={SHOP_URL}>Shop</a></li>
             </ul>
           </div>
         </div>
-        <div className="mt-14 flex items-center gap-6">
-          <div className="hairline flex-1" />
-          <Star className="h-3 w-3 text-red" />
-          <div className="hairline flex-1" />
-        </div>
-        <div className="text-small mt-6 flex flex-wrap justify-between gap-4 text-[0.7rem] tracking-[0.18em] uppercase text-sand">
+        <div className="mt-12 flex flex-wrap justify-between gap-3 border-t border-gold/30 pt-6 text-xs text-cream/70">
           <span>© {new Date().getFullYear()} The Moroccan Joint · Miami, Florida</span>
-          <span>Halal · Delivery &amp; pickup · Catering across South Florida</span>
+          <span>Halal · Pickup &amp; delivery · Catering across South Florida</span>
         </div>
       </div>
     </footer>

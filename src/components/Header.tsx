@@ -3,25 +3,28 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { cartCount, useCart } from "@/lib/store";
 import { whatsappLink } from "@/lib/shopify";
 
 const NAV = [
+  { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
   { href: "/#friday", label: "Friday Couscous" },
-  { href: "/#story", label: "Our Chef" },
   { href: "/catering", label: "Catering" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [compact, setCompact] = useState(false);
   const lines = useCart((s) => s.lines);
+  const addedAt = useCart((s) => s.addedAt);
   const setOpen = useCart((s) => s.setOpen);
   const count = cartCount(lines);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setCompact(window.scrollY > 80);
     const raf = requestAnimationFrame(onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
@@ -31,63 +34,81 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-500 ${
-        scrolled || menuOpen ? "bg-ebony/85 backdrop-blur-md border-b border-line" : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
-        <Link href="/" className="flex items-center gap-4" aria-label="The Moroccan Joint, home">
-          <Image src="/img/logo.jpg" alt="" width={40} height={40} className="h-10 w-10 rounded-full ring-1 ring-red/70" />
-          <span className="text-small font-display text-[1.35rem] tracking-[0.12em] uppercase leading-none">The Moroccan Joint</span>
-        </Link>
+    <header className="sticky top-0 z-40 bg-green-deep text-gold shadow-[0_1px_0_rgba(217,193,131,0.35)]">
+      <div
+        className={`mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 transition-[height] duration-300 lg:px-10 ${
+          compact ? "h-16" : "h-24"
+        }`}
+      >
+        <div className="flex items-center gap-8">
+          <Link href="/" aria-label="The Moroccan Joint, home" className="block shrink-0">
+            <Image
+              src="/img/logo.jpg"
+              alt="The Moroccan Joint"
+              width={88}
+              height={88}
+              priority
+              className={`object-cover transition-all duration-300 ${compact ? "h-12 w-12" : "h-[88px] w-[88px]"}`}
+            />
+          </Link>
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+            {NAV.map((n) => (
+              <Link key={n.href} href={n.href} className="nav-link text-[15px] uppercase tracking-wide text-gold transition-colors hover:text-cream">
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
-        <nav className="hidden items-center gap-10 lg:flex" aria-label="Primary">
-          {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="label link-line text-cream hover:text-ivory transition-colors">
-              {n.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-6">
-          <a href={whatsappLink()} target="_blank" rel="noopener" className="label link-line hidden md:inline text-ivory">
-            WhatsApp
+        <div className="flex items-center gap-5">
+          <a href={whatsappLink()} target="_blank" rel="noopener" className="nav-link hidden text-[15px] uppercase tracking-wide text-gold hover:text-cream md:inline">
+            WhatsApp 305-413-2526
           </a>
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="label flex items-center gap-2 text-ivory"
+            className="flex items-center gap-2 text-gold hover:text-cream"
             aria-label={`Open bag, ${count} items`}
           >
-            Bag
-            <span suppressHydrationWarning className="tnum inline-flex h-6 min-w-6 items-center justify-center border border-gold-dim px-1.5 text-[0.65rem] text-gold">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <path d="M6 8h12l1 13H5L6 8z" />
+              <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+            </svg>
+            <motion.span
+              key={addedAt ?? 0}
+              suppressHydrationWarning
+              className="tnum inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-red px-1.5 text-xs font-medium text-cream"
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.35, 1] }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+            >
               {count}
-            </span>
+            </motion.span>
           </button>
           <button
             type="button"
-            className="lg:hidden text-ivory"
+            className="lg:hidden text-gold"
             aria-expanded={menuOpen}
             aria-label="Toggle navigation"
             onClick={() => setMenuOpen((v) => !v)}
           >
-            <span className="block h-px w-6 bg-current mb-1.5" />
-            <span className="block h-px w-6 bg-current" />
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
           </button>
         </div>
       </div>
 
       {menuOpen && (
-        <nav className="border-t border-line px-6 py-6 lg:hidden" aria-label="Mobile">
-          <ul className="flex flex-col gap-5">
+        <nav className="border-t border-gold/30 bg-green-deep px-6 py-5 lg:hidden" aria-label="Mobile">
+          <ul className="flex flex-col gap-4">
             {NAV.map((n) => (
               <li key={n.href}>
-                <Link href={n.href} onClick={() => setMenuOpen(false)} className="font-display text-2xl text-ivory">{n.label}</Link>
+                <Link href={n.href} onClick={() => setMenuOpen(false)} className="text-base uppercase tracking-wide text-gold">{n.label}</Link>
               </li>
             ))}
             <li>
-              <a href={whatsappLink()} className="label text-gold">WhatsApp 305-413-2526</a>
+              <a href={whatsappLink()} className="text-base uppercase tracking-wide text-cream">WhatsApp 305-413-2526</a>
             </li>
           </ul>
         </nav>

@@ -5,10 +5,9 @@ import { useCart } from "@/lib/store";
 import type { MenuItem } from "@/lib/shopify";
 import { whatsappLink } from "@/lib/shopify";
 
-export default function AddButton({ item, variant = "icon" }: { item: MenuItem; variant?: "icon" | "text" }) {
+export default function AddButton({ item, className = "" }: { item: MenuItem; className?: string }) {
   const add = useCart((s) => s.add);
-  const setOpen = useCart((s) => s.setOpen);
-  const [pulse, setPulse] = useState(false);
+  const [added, setAdded] = useState(false);
 
   if (!item.available) {
     return (
@@ -16,9 +15,9 @@ export default function AddButton({ item, variant = "icon" }: { item: MenuItem; 
         href={whatsappLink(`Is ${item.title} available today?`)}
         target="_blank"
         rel="noopener"
-        className="label link-line text-sand hover:text-gold"
+        className={`btn btn-sm border-line bg-cream-2 text-ink-2 hover:border-green hover:text-green ${className}`}
       >
-        Ask
+        Ask availability
       </a>
     );
   }
@@ -32,29 +31,13 @@ export default function AddButton({ item, variant = "icon" }: { item: MenuItem; 
       image: item.image?.src,
       fridayOnly: item.fridayOnly,
     });
-    setPulse(true);
-    setTimeout(() => setPulse(false), 600);
-    if (variant === "text") setOpen(true);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1200);
   };
 
-  if (variant === "text") {
-    return (
-      <button type="button" onClick={onClick} className="label link-line text-ivory hover:text-gold">
-        Add to bag
-      </button>
-    );
-  }
-
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={`Add ${item.title} to bag`}
-      className={`flex h-9 w-9 items-center justify-center rounded-full border text-lg leading-none transition-all duration-300 ${
-        pulse ? "border-red bg-red text-ivory scale-110" : "border-gold-dim text-gold hover:border-red hover:text-red hover:bg-red/10"
-      }`}
-    >
-      +
+    <button type="button" onClick={onClick} className={`btn btn-sm ${added ? "btn-red" : "btn-green"} ${className}`}>
+      {added ? "Added" : "Add to bag"}
     </button>
   );
 }

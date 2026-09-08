@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import Reveal from "@/components/Reveal";
 import AddButton from "@/components/AddButton";
 import FridayCountdown from "@/components/FridayCountdown";
-import { Divider } from "@/components/Star";
-import { findCategory, formatPrice, getMenu, whatsappLink } from "@/lib/shopify";
+import OpenStatus from "@/components/OpenStatus";
+import Reveal, { SectionTitle } from "@/components/Reveal";
+import { findCategory, formatPrice, getMenu, WHATSAPP_DISPLAY, whatsappLink } from "@/lib/shopify";
 
 export const revalidate = 600;
 
@@ -19,176 +19,167 @@ export default async function HomePage() {
     <>
       <Hero />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-10"><Divider /></div>
+      {/* Order strip */}
+      <div className="bg-red text-cream">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-1 px-5 py-3 text-center text-[13px] uppercase tracking-wide">
+          <span>Order online</span><span aria-hidden="true">•</span>
+          <span>Pickup &amp; delivery</span><span aria-hidden="true">•</span>
+          <a href={whatsappLink()} className="underline underline-offset-4 hover:text-gold">WhatsApp {WHATSAPP_DISPLAY}</a><span aria-hidden="true">•</span>
+          <OpenStatus className="inline" />
+        </div>
+      </div>
 
-      {/* Signature tajines */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-        <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <p className="label">Signature dishes</p>
-              <h2 className="mt-4 font-display text-5xl font-normal leading-[1.02] lg:text-6xl">The tajines</h2>
-            </div>
-            <Link href="/menu" className="label link-line text-cream">Full menu</Link>
-          </div>
-        </Reveal>
+      {/* Explore the menu */}
+      <section className="mx-auto max-w-7xl px-5 py-14 lg:px-10 lg:py-20">
+        <div className="boxed text-center">
+          <SectionTitle title="Explore the menu" />
+          <p className="mt-4 text-ink-2">From Moroccan street food to slow-cooked family favorites.</p>
+          <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {categories.map((c, i) => {
+              const img = c.items.find((i) => i.image)?.image;
+              return (
+                <Reveal as="li" key={c.key} delay={(i % 4) * 0.08}>
+                  <Link href={`/menu#${c.key}`} className="group block transition-transform duration-300 hover:-translate-y-1">
+                    <div className="relative aspect-square overflow-hidden rounded-sm bg-cream-2">
+                      {img && (
+                        <Image src={img.src} alt="" fill sizes="(min-width: 1024px) 22vw, 45vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                      )}
+                    </div>
+                    <p className="mt-3 font-display text-2xl text-green transition-colors group-hover:text-red">{c.title}</p>
+                  </Link>
+                </Reveal>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
 
-        <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-8">
-          {tajines.map((item, i) => (
-            <Reveal key={item.id} delay={i * 0.12}>
-              <article className="group">
+      {/* Tajines */}
+      <section className="bg-cream-2">
+        <div className="mx-auto max-w-7xl px-5 py-14 lg:px-10 lg:py-20">
+          <SectionTitle eyebrow="Slow-cooked" title="Our tajines" />
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {tajines.map((item, i) => (
+              <Reveal as="article" key={item.id} delay={i * 0.12} className="group flex flex-col">
                 {item.image && (
-                  <div className="relative aspect-[5/4] overflow-hidden">
-                    <Image
-                      src={item.image.src}
-                      alt={item.title}
-                      fill
-                      sizes="(min-width: 768px) 30vw, 100vw"
-                      className="photo object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-[1.04]"
-                    />
-                    <div className="photo-veil absolute inset-0" aria-hidden="true" />
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                    <Image src={item.image.src} alt={item.title} fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
                   </div>
                 )}
-                <div className="mt-6 flex items-baseline justify-between gap-4 border-b border-line pb-3">
-                  <h3 className="font-display text-2xl leading-tight">{item.title}</h3>
-                  <span className="tnum font-display text-xl text-gold">{formatPrice(item.price)}</span>
+                <h3 className="heading mt-5 text-2xl">{item.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-ink-2">{item.description}</p>
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="tnum text-[15px] font-medium">{formatPrice(item.price)}</span>
+                  <AddButton item={item} />
                 </div>
-                <p className="text-small mt-4 text-[0.9rem] leading-relaxed text-sand">{item.description}</p>
-                <div className="mt-5"><AddButton item={item} variant="text" /></div>
-              </article>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Friday couscous */}
-      <section id="friday" className="relative scroll-mt-20 overflow-hidden bg-green">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.7]" style={{ backgroundImage: "var(--zellige)" }} aria-hidden="true" />
-        <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(60% 80% at 100% 50%, rgba(200,164,93,0.10), transparent 60%)" }} aria-hidden="true" />
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10 lg:py-36">
-          <Reveal>
-            <p className="label">Every Friday</p>
-            <h2 className="mt-4 font-display text-5xl font-normal leading-[1.02] lg:text-6xl">
-              One plate,<br /><em className="text-gold">the whole table.</em>
-            </h2>
-            <p className="mt-8 max-w-lg leading-relaxed text-cream">
-              Every Friday in Morocco, families gather around a single generous plate of couscous. Ours is prepared
-              the traditional way: halal lamb, chickpeas and vegetables cooked slowly in a fragrant broth until the
-              grain drinks it all in.
-            </p>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-cream/70">
-              Made in limited quantities for Friday delivery only. Pre-order by Thursday; it arrives Friday midday, ready to reheat.
-            </p>
-            <div className="mt-12"><FridayCountdown /></div>
-            <div className="mt-12 flex flex-wrap items-center gap-8">
-              {couscous.map((c) => (
-                <div key={c.id} className="flex items-center gap-4">
-                  <span className="font-display text-lg">{c.title.replace("Lamb Couscous ", "")}</span>
-                  <span className="tnum font-display text-lg text-gold">{formatPrice(c.price)}</span>
+      <section id="friday" className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-24">
+        <Reveal className="relative aspect-[4/3] overflow-hidden rounded-sm">
+          <Image src="/img/couscous.jpg" alt="Traditional lamb couscous" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+        </Reveal>
+        <div>
+          <SectionTitle eyebrow="Fridays only" title="Friday couscous" align="left" />
+          <p className="mt-5 text-[15px] leading-relaxed text-ink-2">
+            Every Friday in Morocco, families gather around one generous plate of couscous. Ours is prepared the traditional
+            Moroccan way with halal lamb, chickpeas and vegetables slowly cooked in a fragrant broth. It is comforting, abundant
+            and made with love, the kind of meal meant to bring people together.
+          </p>
+          <p className="mt-3 text-[15px] leading-relaxed text-ink-2">
+            Traditional lamb couscous is available for Friday delivery only in limited quantities. Pre-order by Thursday to reserve your plate.
+          </p>
+          <div className="mt-7"><FridayCountdown /></div>
+          <ul className="mt-7 divide-y divide-line border-y border-line">
+            {couscous.map((c) => (
+              <li key={c.id} className="flex items-center justify-between gap-4 py-3">
+                <span className="text-[15px] font-medium">{c.title}</span>
+                <span className="flex items-center gap-4">
+                  <span className="tnum text-[15px]">{formatPrice(c.price)}</span>
                   <AddButton item={c} />
-                </div>
-              ))}
-            </div>
-          </Reveal>
-          <Reveal delay={0.15} className="w-full max-w-md lg:justify-self-end">
-            <div className="frame relative aspect-[4/5] w-full overflow-hidden">
-              <Image src="/img/couscous.jpg" alt="Friday lamb couscous" fill sizes="(min-width: 1024px) 40vw, 100vw" className="photo object-cover" />
-              <div className="photo-veil absolute inset-0" aria-hidden="true" />
-            </div>
-          </Reveal>
+                </span>
+              </li>
+            ))}
+          </ul>
+          <a href={whatsappLink("I'd like to pre-order Friday couscous.")} target="_blank" rel="noopener" className="btn btn-red mt-7">Preorder on WhatsApp</a>
         </div>
       </section>
 
       {/* Story */}
-      <section id="story" className="mx-auto max-w-7xl scroll-mt-20 px-6 py-24 lg:px-10 lg:py-36">
-        <div className="grid gap-16 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative col-span-2 aspect-[16/10] overflow-hidden">
-                <Image src="/img/peas.jpg" alt="Lamb tajine with sweet peas and artichoke" fill sizes="40vw" className="photo object-cover" />
-              </div>
-              <div className="relative aspect-square overflow-hidden">
-                <Image src="/img/msemen.jpg" alt="Fresh msemen" fill sizes="20vw" className="photo object-cover" />
-              </div>
-              <div className="relative aspect-square overflow-hidden">
-                <Image src="/img/chicken.jpg" alt="Chicken tajine with preserved lemon and olives" fill sizes="20vw" className="photo object-cover" />
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1} className="lg:col-span-6 lg:col-start-7">
-            <p className="label">From Morocco to Miami</p>
-            <h2 className="mt-4 font-display text-5xl font-normal leading-[1.02] lg:text-6xl">Twenty years of cooking from the heart</h2>
-            <blockquote className="mt-10 border-l border-gold-dim pl-6 font-display text-2xl font-light italic leading-snug text-cream">
-              Preserved lemon, olives, cumin, saffron, fresh herbs and mint tea are not simply ingredients. They are the food she knows, loves and wants to share.
-            </blockquote>
-            <p className="mt-8 leading-relaxed text-sand">
-              Our chef came to Miami carrying the flavors she grew up with in Morocco: spices warming in the kitchen,
-              bread shared around the table, tajines left to cook slowly until everything becomes tender and full of flavor.
-              After more than twenty years, those memories still guide every dish.
+      <section className="bg-green-deep text-cream">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-24">
+          <div>
+            <SectionTitle eyebrow="From Morocco to Miami" title="Real Moroccan cooking" align="left" light />
+            <p className="mt-4 font-display text-2xl text-gold">More than 20 years of cooking from the heart.</p>
+            <p className="mt-5 text-[15px] leading-relaxed text-cream/90">
+              Our chef came to Miami carrying the flavors she grew up with in Morocco: the smell of spices warming in the kitchen,
+              bread shared around the table and tajines left to cook slowly until everything becomes tender and full of flavor.
             </p>
-            <p className="mt-4 leading-relaxed text-sand">
+            <p className="mt-3 text-[15px] leading-relaxed text-cream/90">
+              After more than 20 years of cooking, those memories still guide every dish. Preserved lemon, olives, cumin, saffron,
+              fresh herbs and mint tea are not simply ingredients; they are part of the food she knows, loves and wants to share.
+            </p>
+            <p className="mt-3 text-[15px] leading-relaxed text-cream/90">
               The Moroccan Joint is her way of bringing that feeling of home to Miami: honest food, generous portions and recipes made with love.
             </p>
-          </Reveal>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <Reveal className="relative col-span-2 aspect-[16/9] overflow-hidden rounded-sm">
+              <Image src="/img/peas.jpg" alt="Lamb tajine with sweet peas and artichoke" fill sizes="50vw" className="object-cover" />
+            </Reveal>
+            <Reveal delay={0.1} className="relative aspect-square overflow-hidden rounded-sm">
+              <Image src="/img/msemen.jpg" alt="Fresh msemen" fill sizes="25vw" className="object-cover" />
+            </Reveal>
+            <Reveal delay={0.2} className="relative aspect-square overflow-hidden rounded-sm">
+              <Image src="/img/chicken.jpg" alt="Chicken tajine with preserved lemon and olives" fill sizes="25vw" className="object-cover" />
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-10"><Divider /></div>
-
-      {/* Atay */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-        <div className="grid items-center gap-16 lg:grid-cols-12">
-          <Reveal className="lg:col-span-6">
-            <p className="label">Atay</p>
-            <h2 className="mt-4 font-display text-5xl font-normal leading-[1.02] lg:text-6xl">Mint tea, poured hot<br /><em className="text-red">or served over ice.</em></h2>
-            <p className="mt-8 max-w-lg leading-relaxed text-sand">
-              Moroccan mint tea is traditionally served hot and poured from a height. Our chef created Ice Atay as a
-              Miami answer to that ritual: the same fragrant tea chilled over ice with a twist of lemonade and fresh mint,
-              made for a warm evening beside a panini or a tajine.
-            </p>
-            <ul className="mt-10 max-w-md divide-y divide-line border-y border-line">
-              {teas.map((t) => (
-                <li key={t.id} className="flex items-center justify-between gap-6 py-4">
-                  <div>
-                    <p className="font-display text-xl">{t.title}</p>
-                    <p className="text-sm text-sand">{t.description}</p>
-                  </div>
-                  <div className="flex items-center gap-5">
-                    <span className="tnum font-display text-xl text-gold">{t.available ? formatPrice(t.price) : "Ask"}</span>
-                    <AddButton item={t} />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-          <Reveal delay={0.15} className="lg:col-span-5 lg:col-start-8">
-            <div className="frame relative aspect-[4/5] overflow-hidden">
-              <Image src="/img/iceatay.jpg" alt="Ice Atay with lemon and mint" fill sizes="(min-width: 1024px) 35vw, 100vw" className="photo object-cover" />
-              <div className="photo-veil absolute inset-0" aria-hidden="true" />
-            </div>
-          </Reveal>
+      {/* Ice Atay */}
+      <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-24">
+        <div className="lg:order-2">
+          <SectionTitle eyebrow="Cool down with Ice Atay" title="Moroccan mint tea, reimagined" align="left" />
+          <p className="mt-5 text-[15px] leading-relaxed text-ink-2">
+            Moroccan mint tea is traditionally served hot and poured with care. Our chef created Ice Atay as a refreshing Miami
+            twist on that beloved tradition: fragrant mint tea chilled over ice, bright, smooth and perfect beside a warm panini
+            or slow-cooked tajine.
+          </p>
+          <ul className="mt-7 divide-y divide-line border-y border-line">
+            {teas.map((t) => (
+              <li key={t.id} className="flex items-center justify-between gap-4 py-3">
+                <span className="text-[15px] font-medium">{t.title}</span>
+                <span className="flex items-center gap-4">
+                  {t.available && <span className="tnum text-[15px]">{formatPrice(t.price)}</span>}
+                  <AddButton item={t} />
+                </span>
+              </li>
+            ))}
+          </ul>
+          <Link href="/menu#tea" className="btn btn-outline mt-7">See drinks</Link>
         </div>
+        <Reveal className="relative aspect-[4/3] overflow-hidden rounded-sm lg:order-1">
+          <Image src="/img/iceatay.jpg" alt="Ice Atay with lemon and mint" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+        </Reveal>
       </section>
 
-      {/* Catering teaser */}
-      <section className="bg-red-ink">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-10 px-6 py-20 lg:px-10">
-          <Reveal>
-            <p className="label">Catering &amp; special orders</p>
-            <h2 className="mt-4 max-w-xl font-display text-4xl font-normal leading-tight lg:text-5xl">
-              Bring a Moroccan table to your next gathering.
-            </h2>
-            <p className="mt-5 max-w-lg text-sm leading-relaxed text-cream/80">
-              Family-style couscous, tajines, panini and bocadillo platters, msemen and mint tea for offices, birthdays and
-              private events across Miami, Fort Lauderdale, Boca Raton and Delray Beach.
+      {/* Catering */}
+      <section className="bg-cream-2">
+        <div className="mx-auto max-w-7xl px-5 py-14 lg:px-10 lg:py-20">
+          <div className="boxed mx-auto max-w-3xl text-center">
+            <SectionTitle title="Catering & special orders" />
+            <p className="mt-5 text-[15px] leading-relaxed text-ink-2">
+              Bring the warmth of a Moroccan table to your next gathering. We offer traditional tajines, family-style couscous,
+              panini and bocadillo platters, msemen, mint tea and custom menu selections for family gatherings, office lunches,
+              private events, birthdays, celebrations and large group orders.
             </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="flex flex-wrap items-center gap-8">
-              <Link href="/catering" className="btn-outline border-ivory/40 hover:border-ivory">Plan an event</Link>
-              <a href={whatsappLink("Hi! I'd like to ask about catering.")} target="_blank" rel="noopener" className="label link-line text-cream">Ask on WhatsApp</a>
-            </div>
-          </Reveal>
+            <Link href="/catering" className="btn btn-green mt-7">Plan your order</Link>
+          </div>
         </div>
       </section>
     </>

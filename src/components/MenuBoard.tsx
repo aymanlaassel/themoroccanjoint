@@ -16,23 +16,22 @@ export default function MenuBoard({ categories }: { categories: MenuCategory[] }
       (entries) => {
         for (const e of entries) if (e.isIntersecting) setActive((e.target as HTMLElement).dataset.key);
       },
-      { rootMargin: "-30% 0px -60% 0px" },
+      { rootMargin: "-35% 0px -55% 0px" },
     );
     Object.values(refs.current).forEach((el) => el && io.observe(el));
     return () => io.disconnect();
   }, [categories]);
 
   return (
-    <div className="grid gap-12 lg:grid-cols-[220px_1fr] lg:gap-20">
-      <nav aria-label="Menu categories" className="lg:sticky lg:top-28 lg:self-start">
-        <ul className="scroll-none flex gap-6 overflow-x-auto border-b border-line pb-4 lg:flex-col lg:gap-3 lg:border-b-0 lg:pb-0">
+    <div>
+      <nav aria-label="Menu categories" className="sticky top-16 z-30 -mx-5 border-b border-line bg-cream/95 px-5 backdrop-blur lg:-mx-10 lg:px-10">
+        <ul className="scroll-none flex gap-2 overflow-x-auto py-3">
           {categories.map((c) => (
             <li key={c.key} className="flex-none">
               <a
                 href={`#${c.key}`}
-                className={`label whitespace-nowrap transition-colors ${active === c.key ? "text-red" : "text-sand hover:text-cream"}`}
+                className={`btn btn-sm ${active === c.key ? "btn-green" : "border-line bg-cream text-ink-2 hover:border-green hover:text-green"}`}
               >
-                {active === c.key && <span className="mr-2 inline-block h-px w-4 bg-red align-middle lg:w-6" aria-hidden="true" />}
                 {c.title}
               </a>
             </li>
@@ -40,53 +39,50 @@ export default function MenuBoard({ categories }: { categories: MenuCategory[] }
         </ul>
       </nav>
 
-      <div className="space-y-20">
+      <div className="mt-10 space-y-16">
         {categories.map((c) => (
           <section
             key={c.key}
             id={c.key}
             data-key={c.key}
             ref={(el) => { refs.current[c.key] = el; }}
-            className="scroll-mt-32"
+            className="scroll-mt-36"
           >
             <Reveal>
-              <div className="flex items-baseline justify-between gap-6 border-b border-gold-dim/60 pb-4">
-                <h2 className="font-display text-4xl font-normal">{c.title}</h2>
-                {c.note && <p className="text-small text-right text-xs tracking-[0.12em] uppercase text-sand">{c.note}</p>}
+              <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-gold-2 pb-3">
+                <h2 className="heading text-3xl lg:text-4xl">{c.title}</h2>
+                {c.note && <p className="text-sm text-ink-3">{c.note}</p>}
               </div>
             </Reveal>
-            <ul>
+
+            <ul className="mt-6 grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-3 xl:grid-cols-4">
               {c.items.map((item, i) => (
-                <Reveal key={item.id} delay={Math.min(i * 0.05, 0.3)} y={12}>
-                  <li className="group grid grid-cols-[1fr_auto] items-start gap-6 border-b border-line py-6 transition-colors sm:grid-cols-[72px_1fr_auto_auto]">
+                <Reveal as="li" key={item.id} delay={(i % 4) * 0.08} className="group flex flex-col">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-cream-2">
                     {item.image ? (
                       <Image
                         src={item.image.src}
                         alt={item.title}
-                        width={72}
-                        height={72}
-                        sizes="72px"
-                        className="photo hidden h-[72px] w-[72px] object-cover sm:block"
+                        fill
+                        sizes="(min-width: 1280px) 22vw, (min-width: 768px) 30vw, 45vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
-                    ) : (
-                      <div className="hidden h-[72px] w-[72px] bg-ash sm:block" aria-hidden="true" />
+                    ) : null}
+                    {item.fridayOnly && item.available && (
+                      <span className="absolute bottom-2 left-2 rounded-full bg-red px-2.5 py-1 text-xs text-cream">Fridays only</span>
                     )}
-                    <div className="min-w-0">
-                      <h3 className="font-display text-[1.45rem] leading-tight">
-                        {item.title}
-                        {item.halal && <span className="text-small ml-3 align-middle text-[0.6rem] tracking-[0.2em] uppercase text-sage">Halal</span>}
-                        {item.fridayOnly && <span className="text-small ml-3 align-middle text-[0.6rem] tracking-[0.2em] uppercase text-gold-dim">Friday</span>}
-                      </h3>
-                      {item.description && <p className="text-small mt-1.5 max-w-prose text-[0.9rem] leading-relaxed text-sand">{item.description}</p>}
-                      {item.descriptionEs && <p className="mt-1 max-w-prose font-body text-[1.05rem] italic text-sand/80">{item.descriptionEs}</p>}
-                    </div>
-                    <p className="tnum pt-1 text-right font-display text-xl text-gold">
-                      {item.available ? formatPrice(item.price) : <span className="text-sand/60">—</span>}
-                    </p>
-                    <div className="col-span-2 flex justify-end sm:col-span-1 sm:pt-0.5">
-                      <AddButton item={item} />
-                    </div>
-                  </li>
+                  </div>
+                  <div className="mt-3 flex items-start justify-between gap-3">
+                    <h3 className="text-[15px] font-medium leading-snug">
+                      {item.title}
+                      {item.halal && <span className="ml-2 text-[11px] font-semibold uppercase tracking-wide text-green">Halal</span>}
+                    </h3>
+                    {item.available && <p className="tnum text-[15px]">{formatPrice(item.price)}</p>}
+                  </div>
+                  {item.description && <p className="mt-1 line-clamp-2 text-[13px] leading-relaxed text-ink-2">{item.description}</p>}
+                  <div className="mt-3">
+                    <AddButton item={item} />
+                  </div>
                 </Reveal>
               ))}
             </ul>

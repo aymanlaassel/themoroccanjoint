@@ -18,6 +18,7 @@ type CartState = {
   lines: CartLine[];
   open: boolean;
   lastAdded?: string;
+  addedAt?: number;
   add: (line: Omit<CartLine, "qty">) => void;
   remove: (variantId: string) => void;
   setQty: (variantId: string, qty: number) => void;
@@ -37,7 +38,7 @@ export const useCart = create<CartState>()(
           const lines = existing
             ? s.lines.map((l) => (l.variantId === line.variantId ? { ...l, qty: l.qty + 1 } : l))
             : [...s.lines, { ...line, qty: 1 }];
-          return { lines, lastAdded: line.title };
+          return { lines, lastAdded: line.title, addedAt: Date.now() };
         }),
       remove: (variantId) => set((s) => ({ lines: s.lines.filter((l) => l.variantId !== variantId) })),
       setQty: (variantId, qty) =>

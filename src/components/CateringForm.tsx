@@ -4,7 +4,8 @@ import { useState } from "react";
 import { whatsappLink } from "@/lib/shopify";
 
 const field =
-  "w-full border-0 border-b border-line bg-transparent px-0 py-3 font-display text-xl text-ivory placeholder:text-sand/50 focus:border-gold focus:outline-none transition-colors";
+  "w-full rounded-sm border border-line bg-white px-3.5 py-2.5 text-[15px] text-ink placeholder:text-ink-3 focus:border-green focus:outline-none";
+const label = "block text-sm font-medium text-ink-2";
 
 export default function CateringForm() {
   const [sent, setSent] = useState(false);
@@ -14,10 +15,10 @@ export default function CateringForm() {
     const f = new FormData(e.currentTarget);
     const lines = [
       `Catering request from ${f.get("name")}`,
+      f.get("email") && `Email: ${f.get("email")}`,
       f.get("phone") && `Phone: ${f.get("phone")}`,
       f.get("date") && `Date: ${f.get("date")}`,
       f.get("guests") && `Guests: ${f.get("guests")}`,
-      f.get("area") && `Location: ${f.get("area")}`,
       "",
       f.get("message"),
     ].filter(Boolean);
@@ -26,42 +27,43 @@ export default function CateringForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="space-y-8">
-      <div className="grid gap-8 sm:grid-cols-2">
-        <label className="block">
-          <span className="label">Name</span>
-          <input name="name" required autoComplete="name" className={field} placeholder="Your name" />
-        </label>
-        <label className="block">
-          <span className="label">Phone</span>
-          <input name="phone" type="tel" autoComplete="tel" className={field} placeholder="305 …" />
-        </label>
-        <label className="block">
-          <span className="label">Event date</span>
-          <input name="date" type="date" className={`${field} [color-scheme:dark]`} />
-        </label>
-        <label className="block">
-          <span className="label">Guests</span>
-          <input name="guests" type="number" min={1} className={field} placeholder="25" />
-        </label>
-        <label className="block sm:col-span-2">
-          <span className="label">Where</span>
-          <input name="area" className={field} placeholder="Brickell, Fort Lauderdale, Boca Raton…" />
-        </label>
-        <label className="block sm:col-span-2">
-          <span className="label">Tell us about it</span>
+    <form onSubmit={onSubmit} className="space-y-5">
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="name" className={label}>Name</label>
+          <input id="name" name="name" required autoComplete="name" className={`${field} mt-1`} />
+        </div>
+        <div>
+          <label htmlFor="email" className={label}>Email *</label>
+          <input id="email" name="email" type="email" required autoComplete="email" className={`${field} mt-1`} />
+        </div>
+        <div>
+          <label htmlFor="phone" className={label}>Phone</label>
+          <input id="phone" name="phone" type="tel" autoComplete="tel" className={`${field} mt-1`} />
+        </div>
+        <div>
+          <label htmlFor="date" className={label}>Event date</label>
+          <input id="date" name="date" type="date" className={`${field} mt-1`} />
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="guests" className={label}>Number of guests</label>
+          <input id="guests" name="guests" type="number" min={1} className={`${field} mt-1`} />
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="message" className={label}>Comment</label>
           <textarea
+            id="message"
             name="message"
-            rows={3}
-            className={`${field} resize-none`}
-            placeholder="Office lunch for 25, a mix of tajines and paninis, delivered at noon."
+            rows={4}
+            className={`${field} mt-1`}
+            placeholder="Tell us about your event and what you're looking for."
           />
-        </label>
+        </div>
       </div>
-      <div className="flex flex-wrap items-center gap-6">
-        <button type="submit" className="btn-primary">Send request</button>
-        <p className="text-xs text-sand">
-          {sent ? "Opened in WhatsApp. We reply within the day with pricing and availability." : "Opens WhatsApp with your request filled in."}
+      <div className="flex flex-wrap items-center gap-4">
+        <button type="submit" className="btn btn-green">Send</button>
+        <p className="text-sm text-ink-2">
+          {sent ? "Opened in WhatsApp. We'll reply to discuss details, pricing and availability." : "Sends your request to us on WhatsApp."}
         </p>
       </div>
     </form>
