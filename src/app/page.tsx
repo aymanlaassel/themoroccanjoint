@@ -27,7 +27,7 @@ export default async function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="label">Signature dishes</p>
-              <h2 className="mt-4 font-display text-5xl font-light leading-none lg:text-6xl">The tajines</h2>
+              <h2 className="mt-4 font-display text-5xl font-normal leading-[1.02] lg:text-6xl">The tajines</h2>
             </div>
             <Link href="/menu" className="label link-line text-cream">Full menu</Link>
           </div>
@@ -53,7 +53,7 @@ export default async function HomePage() {
                   <h3 className="font-display text-2xl leading-tight">{item.title}</h3>
                   <span className="tnum font-display text-xl text-gold">{formatPrice(item.price)}</span>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-sand">{item.description}</p>
+                <p className="text-small mt-4 text-[0.9rem] leading-relaxed text-sand">{item.description}</p>
                 <div className="mt-5"><AddButton item={item} variant="text" /></div>
               </article>
             </Reveal>
@@ -63,10 +63,12 @@ export default async function HomePage() {
 
       {/* Friday couscous */}
       <section id="friday" className="relative scroll-mt-20 overflow-hidden bg-green">
+        <div className="pointer-events-none absolute inset-0 opacity-[0.7]" style={{ backgroundImage: "var(--zellige)" }} aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(60% 80% at 100% 50%, rgba(200,164,93,0.10), transparent 60%)" }} aria-hidden="true" />
         <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10 lg:py-36">
           <Reveal>
             <p className="label">Every Friday</p>
-            <h2 className="mt-4 font-display text-5xl font-light leading-none lg:text-6xl">
+            <h2 className="mt-4 font-display text-5xl font-normal leading-[1.02] lg:text-6xl">
               One plate,<br /><em className="text-gold">the whole table.</em>
             </h2>
             <p className="mt-8 max-w-lg leading-relaxed text-cream">
@@ -115,7 +117,7 @@ export default async function HomePage() {
           </Reveal>
           <Reveal delay={0.1} className="lg:col-span-6 lg:col-start-7">
             <p className="label">From Morocco to Miami</p>
-            <h2 className="mt-4 font-display text-5xl font-light leading-none lg:text-6xl">Twenty years of cooking from the heart</h2>
+            <h2 className="mt-4 font-display text-5xl font-normal leading-[1.02] lg:text-6xl">Twenty years of cooking from the heart</h2>
             <blockquote className="mt-10 border-l border-gold-dim pl-6 font-display text-2xl font-light italic leading-snug text-cream">
               Preserved lemon, olives, cumin, saffron, fresh herbs and mint tea are not simply ingredients. They are the food she knows, loves and wants to share.
             </blockquote>
@@ -138,7 +140,7 @@ export default async function HomePage() {
         <div className="grid items-center gap-16 lg:grid-cols-12">
           <Reveal className="lg:col-span-6">
             <p className="label">Atay</p>
-            <h2 className="mt-4 font-display text-5xl font-light leading-none lg:text-6xl">Mint tea, poured hot<br /><em className="text-red">or served over ice.</em></h2>
+            <h2 className="mt-4 font-display text-5xl font-normal leading-[1.02] lg:text-6xl">Mint tea, poured hot<br /><em className="text-red">or served over ice.</em></h2>
             <p className="mt-8 max-w-lg leading-relaxed text-sand">
               Moroccan mint tea is traditionally served hot and poured from a height. Our chef created Ice Atay as a
               Miami answer to that ritual: the same fragrant tea chilled over ice with a twist of lemonade and fresh mint,
@@ -173,7 +175,7 @@ export default async function HomePage() {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-10 px-6 py-20 lg:px-10">
           <Reveal>
             <p className="label">Catering &amp; special orders</p>
-            <h2 className="mt-4 max-w-xl font-display text-4xl font-light leading-tight lg:text-5xl">
+            <h2 className="mt-4 max-w-xl font-display text-4xl font-normal leading-tight lg:text-5xl">
               Bring a Moroccan table to your next gathering.
             </h2>
             <p className="mt-5 max-w-lg text-sm leading-relaxed text-cream/80">

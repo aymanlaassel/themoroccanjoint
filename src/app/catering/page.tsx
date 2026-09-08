@@ -17,7 +17,7 @@ export default function CateringPage() {
       <div className="grid gap-16 lg:grid-cols-12">
         <Reveal className="lg:col-span-5">
           <p className="label">Catering &amp; special orders</p>
-          <h1 className="mt-4 font-display text-6xl font-light leading-none lg:text-7xl">
+          <h1 className="mt-4 font-display text-6xl font-normal leading-[1.02] lg:text-7xl">
             A Moroccan table,<br /><em className="text-red">for all of you.</em>
           </h1>
           <p className="mt-8 max-w-md leading-relaxed text-cream">

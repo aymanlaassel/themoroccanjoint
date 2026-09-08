@@ -19,7 +19,7 @@ export default async function MenuPage() {
         <div className="flex flex-wrap items-end justify-between gap-8 border-b border-gold-dim/60 pb-10">
           <div>
             <p className="label">The menu</p>
-            <h1 className="mt-4 font-display text-6xl font-light leading-none lg:text-7xl">
+            <h1 className="mt-4 font-display text-6xl font-normal leading-[1.02] lg:text-7xl">
               From street food<br /><em className="text-red">to the family table.</em>
             </h1>
           </div>

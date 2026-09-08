@@ -51,8 +51,8 @@ export default function MenuBoard({ categories }: { categories: MenuCategory[] }
           >
             <Reveal>
               <div className="flex items-baseline justify-between gap-6 border-b border-gold-dim/60 pb-4">
-                <h2 className="font-display text-4xl font-light">{c.title}</h2>
-                {c.note && <p className="text-right text-xs tracking-[0.12em] uppercase text-sand">{c.note}</p>}
+                <h2 className="font-display text-4xl font-normal">{c.title}</h2>
+                {c.note && <p className="text-small text-right text-xs tracking-[0.12em] uppercase text-sand">{c.note}</p>}
               </div>
             </Reveal>
             <ul>
@@ -74,11 +74,11 @@ export default function MenuBoard({ categories }: { categories: MenuCategory[] }
                     <div className="min-w-0">
                       <h3 className="font-display text-[1.45rem] leading-tight">
                         {item.title}
-                        {item.halal && <span className="ml-3 align-middle text-[0.6rem] tracking-[0.2em] uppercase text-sage">Halal</span>}
-                        {item.fridayOnly && <span className="ml-3 align-middle text-[0.6rem] tracking-[0.2em] uppercase text-gold-dim">Friday</span>}
+                        {item.halal && <span className="text-small ml-3 align-middle text-[0.6rem] tracking-[0.2em] uppercase text-sage">Halal</span>}
+                        {item.fridayOnly && <span className="text-small ml-3 align-middle text-[0.6rem] tracking-[0.2em] uppercase text-gold-dim">Friday</span>}
                       </h3>
-                      {item.description && <p className="mt-1.5 max-w-prose text-sm leading-relaxed text-sand">{item.description}</p>}
-                      {item.descriptionEs && <p className="mt-1 max-w-prose font-display text-[0.95rem] italic text-sand/80">{item.descriptionEs}</p>}
+                      {item.description && <p className="text-small mt-1.5 max-w-prose text-[0.9rem] leading-relaxed text-sand">{item.description}</p>}
+                      {item.descriptionEs && <p className="mt-1 max-w-prose font-body text-[1.05rem] italic text-sand/80">{item.descriptionEs}</p>}
                     </div>
                     <p className="tnum pt-1 text-right font-display text-xl text-gold">
                       {item.available ? formatPrice(item.price) : <span className="text-sand/60">—</span>}

@@ -28,15 +28,16 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-12 lg:px-10">
         <div className="lg:col-span-7">
           <motion.p {...up(0.05)} className="label">Halal Moroccan kitchen · Miami</motion.p>
+          <div className="draw mt-5 h-px w-24 bg-gold" aria-hidden="true" />
           <motion.h1
             {...up(0.2)}
-            className="mt-7 font-display text-[clamp(2.9rem,7vw,6.2rem)] font-light leading-[0.98] tracking-tight text-ivory"
+            className="mt-7 font-display text-[clamp(2.7rem,6.4vw,5.6rem)] font-normal leading-[1.02] tracking-[-0.01em] text-ivory"
           >
             The warmth of a Moroccan table,
             <br />
             <em className="text-red">delivered to your door.</em>
           </motion.h1>
-          <motion.p {...up(0.4)} className="mt-8 max-w-xl text-[1.05rem] leading-relaxed text-cream">
+          <motion.p {...up(0.4)} className="mt-8 max-w-xl text-[1.25rem] leading-relaxed text-cream">
             Tajines left to cook until the lamb falls apart. Couscous the way it is made on Fridays in Morocco.
             Msemen, paninis, bocadillos and mint tea, hot or over ice. Cooked to order every evening.
           </motion.p>
@@ -57,24 +58,29 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.4, delay: 0.3, ease }}
         >
-          <div className="frame relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden">
-            <motion.div
-              className="absolute inset-0"
-              initial={reduce ? false : { scale: 1.08 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 8, ease: "easeOut" }}
-            >
-              <Image
-                src="/img/couscous.jpg"
-                alt="Lamb couscous with vegetables and chickpeas"
-                fill
-                priority
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="photo object-cover"
-              />
-            </motion.div>
-            <div className="photo-veil absolute inset-0" aria-hidden="true" />
-            <p className="absolute bottom-5 left-5 font-display text-lg italic text-ivory/90">Friday couscous, lamb and seven vegetables</p>
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="arch relative aspect-[4/5] w-full overflow-hidden">
+              <motion.div
+                className="absolute inset-0"
+                initial={reduce ? false : { scale: 1.12 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 9, ease: "easeOut" }}
+              >
+                <Image
+                  src="/img/couscous.jpg"
+                  alt="Lamb couscous with vegetables and chickpeas"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="photo object-cover"
+                />
+              </motion.div>
+              <div className="photo-veil absolute inset-0" aria-hidden="true" />
+            </div>
+            <svg className="arch-outline translate-x-3 translate-y-3 text-gold-dim" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M9 125V54C9 47 0 45 0 36 0 16 26 8 50 0c24 8 50 16 50 36 0 9-9 11-9 18v71" fill="none" stroke="currentColor" strokeWidth="0.6" vectorEffect="non-scaling-stroke" />
+            </svg>
+            <p className="mt-5 text-center font-body text-lg italic text-cream/80">Friday couscous, lamb and seven vegetables</p>
           </div>
         </motion.div>
       </div>

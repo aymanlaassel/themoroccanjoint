@@ -67,14 +67,14 @@ export default function CartDrawer() {
                           <p className="font-display text-lg leading-tight">{l.title}</p>
                           <p className="tnum text-sm text-gold">{formatPrice(l.price * l.qty)}</p>
                         </div>
-                        {l.fridayOnly && <p className="mt-1 text-[0.68rem] tracking-[0.18em] uppercase text-gold-dim">Friday delivery</p>}
+                        {l.fridayOnly && <p className="text-small mt-1 text-[0.68rem] tracking-[0.18em] uppercase text-gold-dim">Friday delivery</p>}
                         <div className="mt-auto flex items-center justify-between pt-3">
                           <div className="flex items-center border border-line">
                             <button type="button" className="px-3 py-1 text-sand hover:text-ivory" onClick={() => setQty(l.variantId, l.qty - 1)} aria-label="Decrease">−</button>
                             <span className="tnum min-w-6 text-center text-sm">{l.qty}</span>
                             <button type="button" className="px-3 py-1 text-sand hover:text-ivory" onClick={() => setQty(l.variantId, l.qty + 1)} aria-label="Increase">+</button>
                           </div>
-                          <button type="button" className="text-[0.68rem] tracking-[0.18em] uppercase text-sand hover:text-red" onClick={() => remove(l.variantId)}>
+                          <button type="button" className="text-small text-[0.68rem] tracking-[0.18em] uppercase text-sand hover:text-red" onClick={() => remove(l.variantId)}>
                             Remove
                           </button>
                         </div>
@@ -100,7 +100,7 @@ export default function CartDrawer() {
                 <a href={whatsappOrderUrl(lines)} target="_blank" rel="noopener" className="btn-outline mt-3 w-full justify-center">
                   Send order on WhatsApp
                 </a>
-                <p className="mt-4 text-center text-[0.68rem] tracking-[0.14em] uppercase text-sand">Secure checkout · Delivery fees added at checkout</p>
+                <p className="text-small mt-4 text-center text-[0.68rem] tracking-[0.14em] uppercase text-sand">Secure checkout · Delivery fees added at checkout</p>
               </div>
             )}
           </motion.aside>
