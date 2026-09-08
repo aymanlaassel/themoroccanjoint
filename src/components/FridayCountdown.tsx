@@ -36,7 +36,7 @@ export default function FridayCountdown() {
   if (!c) return <div className="h-20" aria-hidden="true" />;
 
   if (c.isFriday) {
-    return <p className="font-display text-2xl text-green">It is Friday. Pre-orders for next week are open.</p>;
+    return <p className="text-xl font-bold text-green">It is Friday. Pre-orders for next week are open.</p>;
   }
 
   const cells = [
@@ -52,7 +52,7 @@ export default function FridayCountdown() {
           const s = cell.v.toString().padStart(2, "0");
           return (
             <div key={cell.l}>
-              <span className="tnum block font-display text-5xl leading-none text-green">
+              <span className="tnum block font-display text-5xl font-extrabold leading-none tracking-tight text-green">
                 {s.split("").map((d, i) => <Digit key={i} value={d} />)}
               </span>
               <span className="mt-1 block text-xs uppercase tracking-widest text-ink-3">{cell.l}</span>

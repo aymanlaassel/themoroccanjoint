@@ -46,7 +46,7 @@ export default function CartDrawer() {
             transition={{ type: "tween", duration: 0.35, ease: "easeOut" }}
           >
             <div className="flex items-center justify-between border-b border-line px-6 py-5">
-              <h2 className="font-display text-3xl text-green">Your bag <span className="tnum text-ink-3">({count})</span></h2>
+              <h2 className="heading text-2xl">Your bag <span className="tnum text-ink-3">({count})</span></h2>
               <button type="button" onClick={() => setOpen(false)} className="text-sm uppercase tracking-wide text-ink-2 hover:text-red">Close</button>
             </div>
 
@@ -94,7 +94,7 @@ export default function CartDrawer() {
                 )}
                 <div className="mb-4 flex items-baseline justify-between">
                   <span className="text-sm uppercase tracking-wide text-ink-2">Subtotal</span>
-                  <span className="tnum font-display text-3xl text-green">{formatPrice(total)}</span>
+                  <span className="tnum text-3xl font-extrabold tracking-tight text-green">{formatPrice(total)}</span>
                 </div>
                 <a href={shopifyCheckoutUrl(lines)} className="btn btn-green w-full">Checkout</a>
                 <a href={whatsappOrderUrl(lines)} target="_blank" rel="noopener" className="btn btn-red mt-2 w-full">

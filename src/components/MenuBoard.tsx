@@ -49,7 +49,7 @@ export default function MenuBoard({ categories }: { categories: MenuCategory[] }
             className="scroll-mt-36"
           >
             <Reveal>
-              <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-gold-2 pb-3">
+              <div className="flex flex-wrap items-baseline justify-between gap-4 border-b-2 border-green pb-3">
                 <h2 className="heading text-3xl lg:text-4xl">{c.title}</h2>
                 {c.note && <p className="text-sm text-ink-3">{c.note}</p>}
               </div>
@@ -73,11 +73,11 @@ export default function MenuBoard({ categories }: { categories: MenuCategory[] }
                     )}
                   </div>
                   <div className="mt-3 flex items-start justify-between gap-3">
-                    <h3 className="text-[15px] font-medium leading-snug">
+                    <h3 className="text-[15px] font-bold leading-snug">
                       {item.title}
                       {item.halal && <span className="ml-2 text-[11px] font-semibold uppercase tracking-wide text-green">Halal</span>}
                     </h3>
-                    {item.available && <p className="tnum text-[15px]">{formatPrice(item.price)}</p>}
+                    {item.available && <p className="tnum text-[15px] font-bold">{formatPrice(item.price)}</p>}
                   </div>
                   {item.description && <p className="mt-1 line-clamp-2 text-[13px] leading-relaxed text-ink-2">{item.description}</p>}
                   <div className="mt-3">

@@ -36,11 +36,11 @@ export default function Hero() {
         />
         <motion.h1
           {...up(0.25)}
-          className="mt-8 font-display text-[clamp(2.4rem,6vw,4.5rem)] uppercase leading-none tracking-[0.06em]"
+          className="mt-8 font-display text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold uppercase leading-[0.95] tracking-[-0.03em]"
         >
           The Moroccan Joint
         </motion.h1>
-        <motion.p {...up(0.45)} className="mt-8 font-display text-[clamp(1.9rem,4.2vw,3.4rem)] leading-tight">
+        <motion.p {...up(0.45)} className="mt-6 max-w-3xl text-[clamp(1.25rem,2.6vw,1.9rem)] font-medium leading-snug">
           Moroccan food made in Miami with the warmth of home.
         </motion.p>
         <motion.p {...up(0.6)} className="mt-6 max-w-2xl text-[15px] leading-relaxed text-cream/90 lg:text-base">

@@ -33,7 +33,7 @@ export default function Reveal({
   );
 }
 
-/** Section heading with a gold rule that draws in when scrolled into view. */
+/** Section heading with a red rule that draws in when scrolled into view. */
 export function SectionTitle({
   eyebrow,
   title,
@@ -50,11 +50,11 @@ export function SectionTitle({
   const reduce = useReducedMotion();
   return (
     <Reveal className={`${align === "center" ? "text-center" : ""} ${className}`}>
-      {eyebrow && <p className={`eyebrow ${light ? "text-gold" : ""}`}>{eyebrow}</p>}
-      <h2 className={`heading mt-3 text-4xl lg:text-5xl ${light ? "text-cream" : ""}`}>{title}</h2>
+      {eyebrow && <p className={`eyebrow ${light ? "text-cream/80" : ""}`}>{eyebrow}</p>}
+      <h2 className={`heading mt-3 text-4xl lg:text-6xl ${light ? "text-cream" : ""}`}>{title}</h2>
       <motion.span
         aria-hidden="true"
-        className={`mt-4 block h-px w-14 bg-gold-2 ${align === "center" ? "mx-auto" : ""}`}
+        className={`mt-5 block h-[3px] w-12 ${light ? "bg-cream" : "bg-red"} ${align === "center" ? "mx-auto" : ""}`}
         initial={reduce ? false : { scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}

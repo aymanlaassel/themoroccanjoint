@@ -25,14 +25,14 @@ export default function Toast() {
       {visible && lastAdded && (
         <motion.div
           role="status"
-          className="fixed bottom-5 left-1/2 z-40 flex -translate-x-1/2 items-center gap-4 rounded-full border border-gold-2 bg-green-deep px-5 py-3 text-sm text-cream shadow-lg"
+          className="fixed bottom-5 left-1/2 z-40 flex -translate-x-1/2 items-center gap-4 rounded-full bg-green-deep px-5 py-3 text-sm text-cream shadow-lg"
           initial={{ opacity: 0, y: 16, x: "-50%" }}
           animate={{ opacity: 1, y: 0, x: "-50%" }}
           exit={{ opacity: 0, y: 12, x: "-50%" }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
           <span>
-            <span className="text-gold">Added</span> {lastAdded}
+            <span className="font-bold">Added</span> {lastAdded}
           </span>
           <button
             type="button"
@@ -40,7 +40,7 @@ export default function Toast() {
               setVisible(false);
               setOpen(true);
             }}
-            className="rounded-full bg-cream px-3 py-1 text-xs font-medium uppercase tracking-wide text-green-deep hover:bg-gold"
+            className="rounded-full bg-cream px-3 py-1 text-xs font-medium uppercase tracking-wide text-green-deep hover:bg-red hover:text-cream"
           >
             View bag
           </button>

@@ -27,7 +27,7 @@ export default function CateringPage() {
           <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-[15px] text-ink-2">
             {OCCASIONS.map((o) => (
               <li key={o} className="flex items-center gap-2">
-                <span className="text-gold-2" aria-hidden="true">•</span>{o}
+                <span className="text-red" aria-hidden="true">•</span>{o}
               </li>
             ))}
           </ul>

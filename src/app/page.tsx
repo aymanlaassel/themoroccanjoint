@@ -21,10 +21,10 @@ export default async function HomePage() {
 
       {/* Order strip */}
       <div className="bg-red text-cream">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-1 px-5 py-3 text-center text-[13px] uppercase tracking-wide">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-1 px-5 py-3 text-center text-[12px] font-bold uppercase tracking-[0.12em]">
           <span>Order online</span><span aria-hidden="true">•</span>
           <span>Pickup &amp; delivery</span><span aria-hidden="true">•</span>
-          <a href={whatsappLink()} className="underline underline-offset-4 hover:text-gold">WhatsApp {WHATSAPP_DISPLAY}</a><span aria-hidden="true">•</span>
+          <a href={whatsappLink()} className="underline underline-offset-4 hover:text-white">WhatsApp {WHATSAPP_DISPLAY}</a><span aria-hidden="true">•</span>
           <OpenStatus className="inline" />
         </div>
       </div>
@@ -45,7 +45,7 @@ export default async function HomePage() {
                         <Image src={img.src} alt="" fill sizes="(min-width: 1024px) 22vw, 45vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                       )}
                     </div>
-                    <p className="mt-3 font-display text-2xl text-green transition-colors group-hover:text-red">{c.title}</p>
+                    <p className="mt-3 text-base font-bold uppercase tracking-tight text-green transition-colors group-hover:text-red">{c.title}</p>
                   </Link>
                 </Reveal>
               );
@@ -69,7 +69,7 @@ export default async function HomePage() {
                 <h3 className="heading mt-5 text-2xl">{item.title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-ink-2">{item.description}</p>
                 <div className="mt-4 flex items-center justify-between">
-                  <span className="tnum text-[15px] font-medium">{formatPrice(item.price)}</span>
+                  <span className="tnum text-[15px] font-semibold">{formatPrice(item.price)}</span>
                   <AddButton item={item} />
                 </div>
               </Reveal>
@@ -97,9 +97,9 @@ export default async function HomePage() {
           <ul className="mt-7 divide-y divide-line border-y border-line">
             {couscous.map((c) => (
               <li key={c.id} className="flex items-center justify-between gap-4 py-3">
-                <span className="text-[15px] font-medium">{c.title}</span>
+                <span className="text-[15px] font-semibold">{c.title}</span>
                 <span className="flex items-center gap-4">
-                  <span className="tnum text-[15px]">{formatPrice(c.price)}</span>
+                  <span className="tnum text-[15px] font-bold">{formatPrice(c.price)}</span>
                   <AddButton item={c} />
                 </span>
               </li>
@@ -114,7 +114,7 @@ export default async function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-24">
           <div>
             <SectionTitle eyebrow="From Morocco to Miami" title="Real Moroccan cooking" align="left" light />
-            <p className="mt-4 font-display text-2xl text-gold">More than 20 years of cooking from the heart.</p>
+            <p className="mt-4 text-xl font-semibold text-cream">More than 20 years of cooking from the heart.</p>
             <p className="mt-5 text-[15px] leading-relaxed text-cream/90">
               Our chef came to Miami carrying the flavors she grew up with in Morocco: the smell of spices warming in the kitchen,
               bread shared around the table and tajines left to cook slowly until everything becomes tender and full of flavor.
@@ -153,9 +153,9 @@ export default async function HomePage() {
           <ul className="mt-7 divide-y divide-line border-y border-line">
             {teas.map((t) => (
               <li key={t.id} className="flex items-center justify-between gap-4 py-3">
-                <span className="text-[15px] font-medium">{t.title}</span>
+                <span className="text-[15px] font-semibold">{t.title}</span>
                 <span className="flex items-center gap-4">
-                  {t.available && <span className="tnum text-[15px]">{formatPrice(t.price)}</span>}
+                  {t.available && <span className="tnum text-[15px] font-bold">{formatPrice(t.price)}</span>}
                   <AddButton item={t} />
                 </span>
               </li>

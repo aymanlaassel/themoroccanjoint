@@ -16,30 +16,30 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h4 className="font-display text-2xl uppercase tracking-wide text-gold">Hours</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.14em] text-cream/70">Hours</h4>
             <p className="mt-3 text-sm">Open daily</p>
-            <p className="tnum text-lg">{HOURS_LABEL}</p>
-            <OpenStatus className="mt-2 text-sm text-gold" />
+            <p className="tnum text-2xl font-extrabold tracking-tight">{HOURS_LABEL}</p>
+            <OpenStatus className="mt-2 text-sm text-cream/80" />
             <p className="mt-3 text-sm text-cream/80">Friday couscous delivers midday. Pre-order by Thursday.</p>
           </div>
           <div>
-            <h4 className="font-display text-2xl uppercase tracking-wide text-gold">Order</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.14em] text-cream/70">Order</h4>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><a className="hover:text-gold" href={whatsappLink()} target="_blank" rel="noopener">WhatsApp {WHATSAPP_DISPLAY}</a></li>
-              <li><a className="hover:text-gold" href="tel:+13054132526">Call {WHATSAPP_DISPLAY}</a></li>
-              <li><Link className="hover:text-gold" href="/menu">Order online</Link></li>
-              <li><Link className="hover:text-gold" href="/catering">Catering &amp; special orders</Link></li>
+              <li><a className="hover:text-white underline-offset-4 hover:underline" href={whatsappLink()} target="_blank" rel="noopener">WhatsApp {WHATSAPP_DISPLAY}</a></li>
+              <li><a className="hover:text-white underline-offset-4 hover:underline" href="tel:+13054132526">Call {WHATSAPP_DISPLAY}</a></li>
+              <li><Link className="hover:text-white underline-offset-4 hover:underline" href="/menu">Order online</Link></li>
+              <li><Link className="hover:text-white underline-offset-4 hover:underline" href="/catering">Catering &amp; special orders</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-display text-2xl uppercase tracking-wide text-gold">Follow</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.14em] text-cream/70">Follow</h4>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><a className="hover:text-gold" href={INSTAGRAM_URL} target="_blank" rel="noopener">Instagram @themoroccanjointmiami</a></li>
-              <li><a className="hover:text-gold" href={SHOP_URL}>Shop</a></li>
+              <li><a className="hover:text-white underline-offset-4 hover:underline" href={INSTAGRAM_URL} target="_blank" rel="noopener">Instagram @themoroccanjointmiami</a></li>
+              <li><a className="hover:text-white underline-offset-4 hover:underline" href={SHOP_URL}>Shop</a></li>
             </ul>
           </div>
         </div>
-        <div className="mt-12 flex flex-wrap justify-between gap-3 border-t border-gold/30 pt-6 text-xs text-cream/70">
+        <div className="mt-12 flex flex-wrap justify-between gap-3 border-t border-cream/20 pt-6 text-xs text-cream/70">
           <span>© {new Date().getFullYear()} The Moroccan Joint · Miami, Florida</span>
           <span>Halal · Pickup &amp; delivery · Catering across South Florida</span>
         </div>
