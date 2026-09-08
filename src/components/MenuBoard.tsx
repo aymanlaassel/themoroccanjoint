@@ -30,9 +30,9 @@ export default function MenuBoard({ categories }: { categories: MenuCategory[] }
             <li key={c.key} className="flex-none">
               <a
                 href={`#${c.key}`}
-                className={`label whitespace-nowrap transition-colors ${active === c.key ? "text-gold" : "text-sand hover:text-cream"}`}
+                className={`label whitespace-nowrap transition-colors ${active === c.key ? "text-red" : "text-sand hover:text-cream"}`}
               >
-                {active === c.key && <span className="mr-2 inline-block h-px w-4 bg-gold align-middle lg:w-6" aria-hidden="true" />}
+                {active === c.key && <span className="mr-2 inline-block h-px w-4 bg-red align-middle lg:w-6" aria-hidden="true" />}
                 {c.title}
               </a>
             </li>
@@ -74,7 +74,7 @@ export default function MenuBoard({ categories }: { categories: MenuCategory[] }
                     <div className="min-w-0">
                       <h3 className="font-display text-[1.45rem] leading-tight">
                         {item.title}
-                        {item.halal && <span className="ml-3 align-middle text-[0.6rem] tracking-[0.2em] uppercase text-mint">Halal</span>}
+                        {item.halal && <span className="ml-3 align-middle text-[0.6rem] tracking-[0.2em] uppercase text-sage">Halal</span>}
                         {item.fridayOnly && <span className="ml-3 align-middle text-[0.6rem] tracking-[0.2em] uppercase text-gold-dim">Friday</span>}
                       </h3>
                       {item.description && <p className="mt-1.5 max-w-prose text-sm leading-relaxed text-sand">{item.description}</p>}

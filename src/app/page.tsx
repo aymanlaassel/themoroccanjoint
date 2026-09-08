@@ -62,7 +62,7 @@ export default async function HomePage() {
       </section>
 
       {/* Friday couscous */}
-      <section id="friday" className="relative scroll-mt-20 overflow-hidden bg-smoke">
+      <section id="friday" className="relative scroll-mt-20 overflow-hidden bg-green">
         <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10 lg:py-36">
           <Reveal>
             <p className="label">Every Friday</p>
@@ -74,7 +74,7 @@ export default async function HomePage() {
               the traditional way: halal lamb, chickpeas and vegetables cooked slowly in a fragrant broth until the
               grain drinks it all in.
             </p>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-sand">
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-cream/70">
               Made in limited quantities for Friday delivery only. Pre-order by Thursday; it arrives Friday midday, ready to reheat.
             </p>
             <div className="mt-12"><FridayCountdown /></div>
@@ -88,8 +88,8 @@ export default async function HomePage() {
               ))}
             </div>
           </Reveal>
-          <Reveal delay={0.15} className="lg:justify-self-end">
-            <div className="frame relative aspect-[4/5] w-full max-w-md overflow-hidden">
+          <Reveal delay={0.15} className="w-full max-w-md lg:justify-self-end">
+            <div className="frame relative aspect-[4/5] w-full overflow-hidden">
               <Image src="/img/couscous.jpg" alt="Friday lamb couscous" fill sizes="(min-width: 1024px) 40vw, 100vw" className="photo object-cover" />
               <div className="photo-veil absolute inset-0" aria-hidden="true" />
             </div>
@@ -138,7 +138,7 @@ export default async function HomePage() {
         <div className="grid items-center gap-16 lg:grid-cols-12">
           <Reveal className="lg:col-span-6">
             <p className="label">Atay</p>
-            <h2 className="mt-4 font-display text-5xl font-light leading-none lg:text-6xl">Mint tea, poured hot<br /><em className="text-gold">or served over ice.</em></h2>
+            <h2 className="mt-4 font-display text-5xl font-light leading-none lg:text-6xl">Mint tea, poured hot<br /><em className="text-red">or served over ice.</em></h2>
             <p className="mt-8 max-w-lg leading-relaxed text-sand">
               Moroccan mint tea is traditionally served hot and poured from a height. Our chef created Ice Atay as a
               Miami answer to that ritual: the same fragrant tea chilled over ice with a twist of lemonade and fresh mint,
@@ -169,21 +169,21 @@ export default async function HomePage() {
       </section>
 
       {/* Catering teaser */}
-      <section className="border-y border-line bg-smoke">
+      <section className="bg-red-ink">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-10 px-6 py-20 lg:px-10">
           <Reveal>
             <p className="label">Catering &amp; special orders</p>
             <h2 className="mt-4 max-w-xl font-display text-4xl font-light leading-tight lg:text-5xl">
               Bring a Moroccan table to your next gathering.
             </h2>
-            <p className="mt-5 max-w-lg text-sm leading-relaxed text-sand">
+            <p className="mt-5 max-w-lg text-sm leading-relaxed text-cream/80">
               Family-style couscous, tajines, panini and bocadillo platters, msemen and mint tea for offices, birthdays and
               private events across Miami, Fort Lauderdale, Boca Raton and Delray Beach.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="flex flex-wrap items-center gap-8">
-              <Link href="/catering" className="btn-gold">Plan an event</Link>
+              <Link href="/catering" className="btn-outline border-ivory/40 hover:border-ivory">Plan an event</Link>
               <a href={whatsappLink("Hi! I'd like to ask about catering.")} target="_blank" rel="noopener" className="label link-line text-cream">Ask on WhatsApp</a>
             </div>
           </Reveal>

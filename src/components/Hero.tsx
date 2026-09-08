@@ -21,7 +21,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(70% 55% at 85% 15%, rgba(200,164,93,0.10), transparent 60%), radial-gradient(40% 40% at 10% 90%, rgba(122,27,31,0.14), transparent 60%)",
+            "radial-gradient(70% 55% at 85% 15%, rgba(15,61,42,0.45), transparent 60%), radial-gradient(45% 45% at 8% 95%, rgba(142,27,32,0.28), transparent 60%)",
         }}
         aria-hidden="true"
       />
@@ -34,14 +34,14 @@ export default function Hero() {
           >
             The warmth of a Moroccan table,
             <br />
-            <em className="text-gold">delivered to your door.</em>
+            <em className="text-red">delivered to your door.</em>
           </motion.h1>
           <motion.p {...up(0.4)} className="mt-8 max-w-xl text-[1.05rem] leading-relaxed text-cream">
             Tajines left to cook until the lamb falls apart. Couscous the way it is made on Fridays in Morocco.
             Msemen, paninis, bocadillos and mint tea, hot or over ice. Cooked to order every evening.
           </motion.p>
           <motion.div {...up(0.55)} className="mt-10 flex flex-wrap items-center gap-8">
-            <Link href="/menu" className="btn-gold">Order tonight</Link>
+            <Link href="/menu" className="btn-primary">Order tonight</Link>
             <a href={whatsappLink()} target="_blank" rel="noopener" className="label link-line text-ivory">
               WhatsApp 305-413-2526
             </a>

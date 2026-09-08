@@ -74,7 +74,7 @@ export default function CartDrawer() {
                             <span className="tnum min-w-6 text-center text-sm">{l.qty}</span>
                             <button type="button" className="px-3 py-1 text-sand hover:text-ivory" onClick={() => setQty(l.variantId, l.qty + 1)} aria-label="Increase">+</button>
                           </div>
-                          <button type="button" className="text-[0.68rem] tracking-[0.18em] uppercase text-sand hover:text-oxblood" onClick={() => remove(l.variantId)}>
+                          <button type="button" className="text-[0.68rem] tracking-[0.18em] uppercase text-sand hover:text-red" onClick={() => remove(l.variantId)}>
                             Remove
                           </button>
                         </div>
@@ -96,7 +96,7 @@ export default function CartDrawer() {
                   <span className="label">Subtotal</span>
                   <span className="font-display text-3xl tnum">{formatPrice(total)}</span>
                 </div>
-                <a href={shopifyCheckoutUrl(lines)} className="btn-gold w-full justify-center">Checkout</a>
+                <a href={shopifyCheckoutUrl(lines)} className="btn-primary w-full justify-center">Checkout</a>
                 <a href={whatsappOrderUrl(lines)} target="_blank" rel="noopener" className="btn-outline mt-3 w-full justify-center">
                   Send order on WhatsApp
                 </a>

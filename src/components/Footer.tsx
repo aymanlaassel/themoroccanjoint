@@ -5,7 +5,8 @@ import Star from "./Star";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-smoke">
+    <footer className="bg-smoke">
+      <div className="tricolor" aria-hidden="true" />
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
@@ -39,7 +40,7 @@ export default function Footer() {
         </div>
         <div className="mt-14 flex items-center gap-6">
           <div className="hairline flex-1" />
-          <Star className="h-3 w-3 text-gold-dim" />
+          <Star className="h-3 w-3 text-red" />
           <div className="hairline flex-1" />
         </div>
         <div className="mt-6 flex flex-wrap justify-between gap-4 text-[0.7rem] tracking-[0.18em] uppercase text-sand">

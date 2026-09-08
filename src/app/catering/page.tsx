@@ -18,7 +18,7 @@ export default function CateringPage() {
         <Reveal className="lg:col-span-5">
           <p className="label">Catering &amp; special orders</p>
           <h1 className="mt-4 font-display text-6xl font-light leading-none lg:text-7xl">
-            A Moroccan table,<br /><em className="text-gold">for all of you.</em>
+            A Moroccan table,<br /><em className="text-red">for all of you.</em>
           </h1>
           <p className="mt-8 max-w-md leading-relaxed text-cream">
             Traditional tajines, family-style couscous, panini and bocadillo platters, msemen, mint tea and custom

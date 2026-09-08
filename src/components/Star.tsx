@@ -10,7 +10,7 @@ export function Divider({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center gap-6 ${className}`} aria-hidden="true">
       <div className="hairline flex-1" />
-      <Star className="h-3 w-3 text-gold-dim" />
+      <Star className="h-3 w-3 text-red" />
       <div className="hairline flex-1" />
     </div>
   );

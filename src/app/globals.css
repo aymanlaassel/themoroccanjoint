@@ -10,8 +10,12 @@
   --color-sand: #9f917d;
   --color-gold: #c8a45d;
   --color-gold-dim: #8f7440;
-  --color-oxblood: #7a1b1f;
-  --color-mint: #6f9b7c;
+  --color-red: #c1272d;
+  --color-red-deep: #8e1b20;
+  --color-red-ink: #521114;
+  --color-green: #0f3d2a;
+  --color-green-deep: #0a2b1e;
+  --color-sage: #7fae8d;
 
   --font-display: var(--font-cormorant), "Cormorant Garamond", Garamond, Georgia, serif;
   --font-body: var(--font-jost), Jost, "Helvetica Neue", Arial, sans-serif;
@@ -51,7 +55,7 @@ body {
   font-weight: 400;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-sage);
 }
 
 .hairline {
@@ -76,20 +80,25 @@ body {
 }
 .link-line:hover::after { transform: scaleX(0.4); }
 
-.btn-gold {
+.btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.95rem 1.75rem;
-  background: var(--color-gold);
-  color: var(--color-ebony);
+  background: var(--color-red-deep);
+  color: var(--color-ivory);
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   transition: background 0.3s ease, transform 0.3s var(--ease-out-quart);
 }
-.btn-gold:hover { background: #d8b46c; transform: translateY(-1px); }
+.btn-primary:hover { background: var(--color-red); transform: translateY(-1px); }
+
+.tricolor {
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-red) 0 33.3%, var(--color-gold) 33.3% 66.6%, var(--color-green) 66.6% 100%);
+}
 
 .btn-outline {
   display: inline-flex;

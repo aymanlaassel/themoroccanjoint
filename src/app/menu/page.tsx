@@ -20,7 +20,7 @@ export default async function MenuPage() {
           <div>
             <p className="label">The menu</p>
             <h1 className="mt-4 font-display text-6xl font-light leading-none lg:text-7xl">
-              From street food<br /><em className="text-gold">to the family table.</em>
+              From street food<br /><em className="text-red">to the family table.</em>
             </h1>
           </div>
           <div className="max-w-sm text-sm leading-relaxed text-sand">

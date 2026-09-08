@@ -38,7 +38,7 @@ export default function Header() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         <Link href="/" className="flex items-center gap-4" aria-label="The Moroccan Joint, home">
-          <Image src="/img/logo.jpg" alt="" width={40} height={40} className="h-10 w-10 rounded-full ring-1 ring-gold-dim" />
+          <Image src="/img/logo.jpg" alt="" width={40} height={40} className="h-10 w-10 rounded-full ring-1 ring-red/70" />
           <span className="font-display text-[1.35rem] tracking-[0.12em] uppercase leading-none">The Moroccan Joint</span>
         </Link>
 

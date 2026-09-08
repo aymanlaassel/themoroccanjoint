@@ -51,7 +51,7 @@ export default function AddButton({ item, variant = "icon" }: { item: MenuItem; 
       onClick={onClick}
       aria-label={`Add ${item.title} to bag`}
       className={`flex h-9 w-9 items-center justify-center rounded-full border text-lg leading-none transition-all duration-300 ${
-        pulse ? "border-gold bg-gold text-ebony scale-110" : "border-gold-dim text-gold hover:border-gold hover:bg-gold/10"
+        pulse ? "border-red bg-red text-ivory scale-110" : "border-gold-dim text-gold hover:border-red hover:text-red hover:bg-red/10"
       }`}
     >
       +

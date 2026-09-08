@@ -59,7 +59,7 @@ export default function CateringForm() {
         </label>
       </div>
       <div className="flex flex-wrap items-center gap-6">
-        <button type="submit" className="btn-gold">Send request</button>
+        <button type="submit" className="btn-primary">Send request</button>
         <p className="text-xs text-sand">
           {sent ? "Opened in WhatsApp. We reply within the day with pricing and availability." : "Opens WhatsApp with your request filled in."}
         </p>

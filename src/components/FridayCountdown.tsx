@@ -35,11 +35,11 @@ export default function FridayCountdown() {
         {cells.map((cell) => (
           <div key={cell.l} className="text-center">
             <span className="font-display text-6xl font-light leading-none text-ivory tnum">{cell.v.toString().padStart(2, "0")}</span>
-            <span className="label mt-3 block text-sand">{cell.l}</span>
+            <span className="label mt-3 block text-cream/60">{cell.l}</span>
           </div>
         ))}
       </div>
-      <p className="mt-5 text-sm text-sand">until pre-orders close, Thursday at midnight.</p>
+      <p className="mt-5 text-sm text-cream/70">until pre-orders close, Thursday at midnight.</p>
     </div>
   );
 }
