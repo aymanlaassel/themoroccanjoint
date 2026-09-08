@@ -1,0 +1,686 @@
+{
+ "fetchedAt": "2026-09-08",
+ "products": [
+  {
+   "id": 7774750343377,
+   "handle": "a-tajine-cow-trotters-with-chickpeas",
+   "title": "a Tajine Cow Trotters with Chickpeas",
+   "body_html": "",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43201396965585,
+     "price": "18.99",
+     "available": false
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/A32F375E-062C-4ECD-BF4B-307D4268D6E9.png?v=1785292344",
+     "width": 1383,
+     "height": 1137
+    }
+   ]
+  },
+  {
+   "id": 7774750245073,
+   "handle": "msemen-kefta-halal",
+   "title": "Msemen Kefta Halal",
+   "body_html": "",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43201396048081,
+     "price": "11.00",
+     "available": false
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/EA2D2376-D554-4E00-BCF6-87B8AC6FB731.png?v=1785292115",
+     "width": 1086,
+     "height": 1448
+    }
+   ]
+  },
+  {
+   "id": 7774750146769,
+   "handle": "msemen-merguez-halal",
+   "title": "Msemen Merguez Halal",
+   "body_html": "",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43201395917009,
+     "price": "11.00",
+     "available": false
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/19EBF908-A52E-4DB0-87AA-10601D4B48C7.png?v=1785291944",
+     "width": 1086,
+     "height": 1448
+    }
+   ]
+  },
+  {
+   "id": 7772905898193,
+   "handle": "hot-moroccan-atay",
+   "title": "Hot Moroccan Atay",
+   "body_html": "Traditional Moroccan mint tea, served hot.<br><em>T\u00e9 de menta marroqu\u00ed tradicional, servido caliente.</em>",
+   "product_type": "Tea",
+   "variants": [
+    {
+     "id": 43193945817297,
+     "price": "3.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/atay-tea.jpg?v=1785034972",
+     "width": 1320,
+     "height": 866
+    }
+   ]
+  },
+  {
+   "id": 7772905799889,
+   "handle": "tajine-lamb-sweet-peas-artichoke",
+   "title": "a Tajine Lamb Sweet Peas & Artichoke",
+   "body_html": "Slow-cooked lamb, sweet peas, artichoke &amp; bread. HALAL<br><em>Cordero cocinado lentamente, guisantes, alcachofa y pan.</em>",
+   "product_type": "Tajine",
+   "variants": [
+    {
+     "id": 43193945293009,
+     "price": "16.99",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/tajine-lamb-sweet-peas-artichoke.jpg?v=1784868345",
+     "width": 1320,
+     "height": 897
+    }
+   ]
+  },
+  {
+   "id": 7772905734353,
+   "handle": "tajine-lamb-prunes",
+   "title": "a Tajine Lamb Prunes",
+   "body_html": "Slow-cooked lamb with prunes &amp; bread. HALAL<br><em>Cordero cocinado lentamente con ciruelas pasas y pan.</em>",
+   "product_type": "Tajine",
+   "variants": [
+    {
+     "id": 43193945030865,
+     "price": "16.99",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/tajine-lamb-prunes.png?v=1784869333",
+     "width": 1086,
+     "height": 1448
+    }
+   ]
+  },
+  {
+   "id": 7772905701585,
+   "handle": "tajine-chicken-lemon-olive",
+   "title": "a Tajine Chicken Lemon Olive",
+   "body_html": "Slow-cooked chicken, preserved lemon, olives, fries &amp; bread. HALAL<br><em>Pollo cocinado lentamente, lim\u00f3n encurtido, aceitunas, papas fritas y pan.</em>",
+   "product_type": "Tajine",
+   "variants": [
+    {
+     "id": 43193944998097,
+     "price": "15.99",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/tajine-chicken-lemon-olive.jpg?v=1784868312",
+     "width": 1320,
+     "height": 737
+    }
+   ]
+  },
+  {
+   "id": 7772905668817,
+   "handle": "lamb-couscous-for-2",
+   "title": "a Lamb Couscous for 2",
+   "body_html": "<p>Traditional Moroccan couscous with halal lamb, serves 2. HALAL<br><em>Cusc\u00fas marroqu\u00ed tradicional con cordero halal, para 2 personas.</em><br><br>Fridays only \u2014 pre-order required<br>WhatsApp 305-413-2526 \u00b7 Last call Thursday \u00b7 Delivery Friday midday</p>\n<p>Please provide your phone number and delivery address at checkout. Note: dish arrives ready to reheat \u2014 let us know your preferred delivery time and it will be warmed up for you.</p>",
+   "product_type": "Couscous",
+   "variants": [
+    {
+     "id": 43193944965329,
+     "price": "25.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/lamb-couscous.png?v=1784869256",
+     "width": 1122,
+     "height": 1402
+    }
+   ]
+  },
+  {
+   "id": 7772905570513,
+   "handle": "lamb-couscous-for-1",
+   "title": "a Lamb Couscous for 1",
+   "body_html": "<p>Traditional Moroccan couscous with halal lamb. HALAL<br><em>Cusc\u00fas marroqu\u00ed tradicional con cordero halal.</em><br><br>Fridays only \u2014 pre-order required<br>WhatsApp 305-413-2526 \u00b7 Last call Thursday \u00b7 Delivery Friday midday</p>\n<p>Please provide your phone number and delivery address at checkout. Note: dish arrives ready to reheat \u2014 let us know your preferred delivery time and it will be warmed up for you.</p>",
+   "product_type": "Couscous",
+   "variants": [
+    {
+     "id": 43193944506577,
+     "price": "17.99",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/lamb-couscous.png?v=1784869256",
+     "width": 1122,
+     "height": 1402
+    }
+   ]
+  },
+  {
+   "id": 7772824699089,
+   "handle": "zaalouk-tektouka",
+   "title": "a Zaalouk & Tektouka",
+   "body_html": "<p>A classic Moroccan side pairing smoky roasted eggplant zaalouk with tangy tomato and pepper tektouka, served with fresh bread for dipping.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43193330008273,
+     "price": "0.00",
+     "available": false
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/zaalouk-tektouka.jpg?v=1784781132",
+     "width": 4284,
+     "height": 5712
+    }
+   ]
+  },
+  {
+   "id": 7772824666321,
+   "handle": "briwa-moroccan-pastilla",
+   "title": "a Briwa (Moroccan Pastilla)",
+   "body_html": "<p>Crispy fried Moroccan pastry triangles (briwa), filled and folded like a mini pastilla, served golden and crunchy with a savory dipping sauce.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43193329975505,
+     "price": "0.00",
+     "available": false
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/briwa-pastilla.png?v=1784781049",
+     "width": 1122,
+     "height": 1402
+    }
+   ]
+  },
+  {
+   "id": 7771104346321,
+   "handle": "moroccan-tea",
+   "title": "Ice Atay",
+   "body_html": "<p>Traditional Moroccan atay (mint tea) served ice-cold with a refreshing lemonade twist, garnished with fresh mint.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43184808296657,
+     "price": "3.50",
+     "available": false
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/ice-atay-lemonade.png?v=1784780965",
+     "width": 1086,
+     "height": 1448
+    }
+   ]
+  },
+  {
+   "id": 7771104116945,
+   "handle": "bocadillo-royale",
+   "title": "a Bocadillo Royale",
+   "body_html": "<p>A full-size Royale Moroccan bocadillo on a freshly baked baguette, loaded with premium fillings, crisp vegetables, fries, and our signature house sauce.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43184808001745,
+     "price": "13.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/bocadillo-royale.png?v=1785035149",
+     "width": 1024,
+     "height": 1536
+    }
+   ]
+  },
+  {
+   "id": 7771103559889,
+   "handle": "sausage-olive-panini",
+   "title": "a Merguez Panini Halal",
+   "body_html": "<p>Grilled panini on fresh bread, filled with savory sausage, olives, melted cheese, and our signature house sauces. Served hot and made fresh to order.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43184800727249,
+     "price": "10.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/sausage-olive-panini.png?v=1784867897",
+     "width": 1086,
+     "height": 1448
+    }
+   ]
+  },
+  {
+   "id": 7771103494353,
+   "handle": "meatball-panini",
+   "title": "a Kefta Panini Halal",
+   "body_html": "<p>Grilled panini on fresh bread, filled with savory meatballs, melted cheese, and our signature house sauces. Served hot and made fresh to order.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43184800661713,
+     "price": "10.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/meatball-panini.png?v=1784867854",
+     "width": 1402,
+     "height": 1122
+    }
+   ]
+  },
+  {
+   "id": 7771103428817,
+   "handle": "chicken-pepperoni-panini",
+   "title": "a Chicken Panini Halal",
+   "body_html": "<p>Grilled panini on fresh bread, filled with chicken, pepperoni, melted cheese, and our signature house sauces. Served hot and made fresh to order.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43184800596177,
+     "price": "10.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/chicken-panini-halal.png?v=1784870630",
+     "width": 1024,
+     "height": 1536
+    }
+   ]
+  },
+  {
+   "id": 7770444136657,
+   "handle": "postobon-apple-soda",
+   "title": "Postobon Apple Soda",
+   "body_html": "<p>Ice-cold Postobon apple-flavored soda can.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181899317457,
+     "price": "4.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/postobon-apple-soda.png?v=1784007149",
+     "width": 728,
+     "height": 1016
+    }
+   ]
+  },
+  {
+   "id": 7770444103889,
+   "handle": "coke-diet",
+   "title": "Coke Diet",
+   "body_html": "<p>Ice-cold Diet Coke can.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181899284689,
+     "price": "4.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/diet-coke.png?v=1784007056",
+     "width": 704,
+     "height": 822
+    }
+   ]
+  },
+  {
+   "id": 7770444071121,
+   "handle": "fanta",
+   "title": "Fanta",
+   "body_html": "<p>Ice-cold orange Fanta can.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181899251921,
+     "price": "4.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/fanta-orange.png?v=1784007083",
+     "width": 758,
+     "height": 896
+    }
+   ]
+  },
+  {
+   "id": 7770444038353,
+   "handle": "sprite",
+   "title": "Sprite",
+   "body_html": "<p>Ice-cold lemon-lime Sprite can.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181899219153,
+     "price": "4.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/sprite.png?v=1784007111",
+     "width": 754,
+     "height": 864
+    }
+   ]
+  },
+  {
+   "id": 7770443972817,
+   "handle": "coke",
+   "title": "Coke",
+   "body_html": "<p>Ice-cold classic Coca-Cola can.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181899055313,
+     "price": "4.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/coca-cola.png?v=1784007022",
+     "width": 712,
+     "height": 808
+    }
+   ]
+  },
+  {
+   "id": 7770443940049,
+   "handle": "caprisun",
+   "title": "CapriSun",
+   "body_html": "<p>Classic fruit-flavored drink pouch.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181899022545,
+     "price": "3.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/caprisun.jpg?v=1785035007",
+     "width": 1320,
+     "height": 1531
+    }
+   ]
+  },
+  {
+   "id": 7770443907281,
+   "handle": "mango-juice-box",
+   "title": "Mango Juice Box",
+   "body_html": "<p>Chilled mango-flavored juice box.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181898989777,
+     "price": "3.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/del-frutal-mango.png?v=1784007182",
+     "width": 774,
+     "height": 1150
+    }
+   ]
+  },
+  {
+   "id": 7770443874513,
+   "handle": "acqua-panna-water",
+   "title": "Acqua Panna Water",
+   "body_html": "<p>Bottled still spring water.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181898957009,
+     "price": "3.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/acqua-panna.png?v=1784007218",
+     "width": 942,
+     "height": 1252
+    }
+   ]
+  },
+  {
+   "id": 7770443776209,
+   "handle": "chips",
+   "title": "Chips",
+   "body_html": "<p>A single-serve bag of kettle-cooked sea salt potato chips.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181898858705,
+     "price": "2.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/miss-vickies-sea-salt.png?v=1784006986",
+     "width": 1370,
+     "height": 1248
+    }
+   ]
+  },
+  {
+   "id": 7770443677905,
+   "handle": "milkshake-avocat-dates",
+   "title": "a Milkshake Avocat Dates",
+   "body_html": "<p>Fresh avocado blended with sweet Medjool dates for a naturally sweet Moroccan favorite.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181898662097,
+     "price": "9.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/milkshake-avocat-dates.jpg?v=1785035479",
+     "width": 1320,
+     "height": 1320
+    }
+   ]
+  },
+  {
+   "id": 7770443645137,
+   "handle": "avocat-fruits-secs",
+   "title": "a Avocat Fruits Secs",
+   "body_html": "<p>Fresh avocado blended with premium mixed nuts and dried fruits. Contains almonds, walnuts, and pistachios.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181898629329,
+     "price": "9.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/avocat-fruits-secs.png?v=1785035499",
+     "width": 1320,
+     "height": 1320
+    }
+   ]
+  },
+  {
+   "id": 7770443612369,
+   "handle": "avocat-crunch",
+   "title": "a Avocat Crunch",
+   "body_html": "<p>Premium avocado smoothie topped with chocolate drizzle, whipped cream, crushed cookies, pistachio, and roasted nuts. Contains dairy and nuts.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181898596561,
+     "price": "9.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/avocat-crunch.png?v=1785035519",
+     "width": 1320,
+     "height": 1320
+    }
+   ]
+  },
+  {
+   "id": 7770443546833,
+   "handle": "half-everything-bocadillo",
+   "title": "a Half Everything Bocadillo",
+   "body_html": "<p>A half-size Moroccan street-food bocadillo on a freshly baked baguette, loaded with crisp vegetables, fries, house sauce, and your choice of fillings.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181898531025,
+     "price": "7.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/bocadillo-royale_acf979c7-fe5b-4dc5-aee0-693e1d7ae905.png?v=1785035206",
+     "width": 1024,
+     "height": 1536
+    }
+   ]
+  },
+  {
+   "id": 7770443514065,
+   "handle": "1-msemen",
+   "title": "1 Msemen",
+   "body_html": "<p>A single freshly baked traditional Moroccan msemen flatbread, layered and pan-cooked to a golden, flaky finish.</p>",
+   "product_type": "",
+   "variants": [
+    {
+     "id": 43181898498257,
+     "price": "5.00",
+     "available": true
+    }
+   ],
+   "images": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0675/4517/0129/files/msemen.png?v=1784007247",
+     "width": 1192,
+     "height": 766
+    }
+   ]
+  }
+ ],
+ "collections": {
+  "tajine": [
+   "tajine-lamb-sweet-peas-artichoke",
+   "tajine-lamb-prunes",
+   "tajine-chicken-lemon-olive"
+  ],
+  "couscous": [
+   "lamb-couscous-for-2",
+   "lamb-couscous-for-1"
+  ],
+  "moroccan-bocadillo": [
+   "bocadillo-royale",
+   "half-everything-bocadillo"
+  ],
+  "panini": [
+   "sausage-olive-panini",
+   "meatball-panini",
+   "chicken-pepperoni-panini"
+  ],
+  "msemen": [
+   "1-msemen"
+  ],
+  "appetizers-sides": [
+   "zaalouk-tektouka",
+   "briwa-moroccan-pastilla"
+  ],
+  "smoothies": [
+   "avocat-crunch",
+   "milkshake-avocat-dates",
+   "avocat-fruits-secs"
+  ],
+  "tea": [
+   "hot-moroccan-atay",
+   "moroccan-tea"
+  ],
+  "soft-drinks": [
+   "postobon-apple-soda",
+   "coke-diet",
+   "fanta",
+   "sprite",
+   "coke",
+   "caprisun",
+   "mango-juice-box"
+  ],
+  "water": [
+   "acqua-panna-water"
+  ],
+  "snacks": [
+   "chips"
+  ]
+ }
+}
